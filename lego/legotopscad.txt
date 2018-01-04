@@ -1,0 +1,45 @@
+// John Sokol - 12/5/2016 Adapted from: 
+// Quick-and-dirty parametric LEGO-compatible
+// bricks in OpenSCAD.
+// LEGO(R) is a trademark of the LEGO Group.
+// References:
+// * http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+// * http://nicjasno.com/forum/viewtopic.php?t=653
+
+// Create (w*2,h*2) LEGO-compatible blocks.
+
+projection()
+two_by_two(4,4);
+
+module two_by_two(w,l){
+  
+  DETAIL_SCALE=0.1; 
+  WALL_THICKNESS=16; 
+  SQUARE_WIDTH=80; 
+  SQUARE_HEIGHT=96; 
+  PLATE_HEIGHT=32; 
+  PEG_RADIUS=24; 
+  PEG_HEIGHT=18; 
+  ANTI_PEG_RADIUS=32; 
+
+  my_height = PLATE_HEIGHT; 
+
+  scale(DETAIL_SCALE){
+
+      for(j=[0:l-1]){ 
+        for(x=[SQUARE_WIDTH*0.5,SQUARE_WIDTH*1.5]) {
+          for(y=[SQUARE_WIDTH*0.5, SQUARE_WIDTH*1.5]) {
+            translate([(i * SQUARE_WIDTH * 2) + x, (j * SQUARE_WIDTH * 2) + y,my_height]){
+            
+                cylinder(h=PEG_HEIGHT, r=PEG_RADIUS);
+            
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
