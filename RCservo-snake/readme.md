@@ -1,7 +1,7 @@
 
 #Laser cut Sname Robot 
 
-![snake](Screenshot from 2026-06-02 11-49-23.png)
+![snake]("Screenshot from 2026-06-02 11-49-23.png")
 
 https://johnsokol.blogspot.com/2026/06/laser-cut-snake-bot.html
 
